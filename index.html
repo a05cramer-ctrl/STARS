@@ -478,7 +478,7 @@ const IMG_T = ['s01-alarm-t.jpg','s02-doorbell-t.jpg','s03-dryer-t.jpg','s04-don
 const EX = [['A','sep 17, 2013. the night it started.'],['B','doorbell cam, 3:12 am. he knew.'],['C','laundromat. two officers walked right past.'],['D','donut shop. nobody checked the mustache.'],['E','freeway pursuit. top speed 6 mph.'],['F','last known location: classified.']];
 const STRIP = {w:4716, h:1000}, ROAD = .87;
 const SP = {him:{w:847,h:1158}, cop:{w:373,h:645}, k9:{w:654,h:614}, cruiser:{w:700,h:257}, swat:{w:707,h:407}, heli:{w:704,h:418}};
-const BARS = {cruiser:[[.515,.087,'b'],[.56,.09,'r']], swat:[[.541,.043,'r'],[.576,.042,'b']]};
+const BARS = {cruiser:[[.485,.087,'b'],[.44,.09,'r']], swat:[[.541,.043,'r'],[.576,.042,'b']]};
 const LAMP = [.825,.89];
 const RED = '255,36,54', BLU = '52,104,255';
 const M = [
@@ -690,7 +690,7 @@ function frame(now){
     else { U.ph+=dt*U.bobF*Math.PI*2*(RM?.5:1); const s2=Math.sin(U.ph); y=-Math.abs(s2)*u*U.bobA; rot=s2*(U.rotA||3);
       if(U.trip>0){ U.trip-=dt; const a=Math.sin(clamp(1-U.trip/1.1,0,1)*Math.PI); rot-=80*a; y+=u*.1*a; x+=u*.12*a; } }
     U.cx=x; U.bottom=bottom; U.top=bottom-U.h+y;
-    U.el.style.transform=`translate3d(${(x-U.w/2).toFixed(1)}px,${(bottom-U.h+y).toFixed(1)}px,0) rotate(${rot.toFixed(2)}deg)`;
+    U.el.style.transform=`translate3d(${(x-U.w/2).toFixed(1)}px,${(bottom-U.h+y).toFixed(1)}px,0) rotate(${rot.toFixed(2)}deg)${U.sprite==='cruiser'?' scaleX(-1)':''}`;
   }
   // billboard
   if(S.bbX==null){ if(S.billboard){ S.bbWait-=dt; if(S.bbWait<=0){ S.bbX=W+20; bb.style.visibility='visible'; $('#bbB').textContent=fmt$(effMc()); } } }
