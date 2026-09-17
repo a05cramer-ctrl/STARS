@@ -3,7 +3,7 @@ window.STARS_CFG = {
   CA: "",                 // token mint / contract address
   CHAIN: "solana",
   PAD: "stonkfun",         // pumpfun | pons | stonkfun
-  X: "https://x.com/",    // X profile link
+  X: "https://x.com/fivestarsttwo",    // X profile link
   BUY: "",                // optional: exact launchpad page URL (overrides PAD link)
   CHART: "",              // optional: chart URL (defaults to gmgn)
   PAIR: "TTWO"
